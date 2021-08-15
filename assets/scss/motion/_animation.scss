@@ -5,7 +5,7 @@
 }
 
 #freepik--Arrow--inject-38 {
-  animation: 10s mouseMove infinite ease;
+  animation: 10 s mouseMove infinite ease;
 }
 
 @keyframes floating {
@@ -19,8 +19,31 @@
 }
 
 @keyframes mouseMove {
-  0%, 100% {
-    
+  0% {
+    transform: translate(0, 0);
   }
-  50% {}
+  10% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-4.5rem, 2.5rem);
+  }
+  35% {
+    transform: translate(-4.5rem, 2.5rem);
+  }
+  50% {
+    transform: translate(-9rem, 5rem);
+  }
+  60% {
+    transform: translate(-9rem, 5rem);
+  }
+  75% {
+    transform: translate(-4.5rem, 2.5rem);
+  }
+  85% {
+    transform: translate(-4.5rem, 2.5rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

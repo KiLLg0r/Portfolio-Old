@@ -1,6 +1,6 @@
 main {
   section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--primary-tint-800);
     outline: 1px solid black;
@@ -16,7 +16,8 @@ main {
   }
   #home {
     width: 100%;
-    padding: clamp(0.5rem, 5vw, 5rem);
+    padding-inline: clamp(1rem, 5vw, 5rem);
+    padding-block: clamp(2rem, 8vh, 5rem);
     .column {
       width: 50%;
       height: 100%;
