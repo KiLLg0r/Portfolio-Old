@@ -11,6 +11,10 @@
   animation: 5s infinite ease floating;
 }
 
+#freepik--Arrow--inject-38 {
+  animation: 10s mouseMove infinite ease;
+}
+
 @keyframes floating {
   0%, 100% {
     transform: translateY(-1em);
@@ -19,6 +23,7 @@
     transform: translateY(0em);
   }
 }
+@keyframes mouseMove {}
 header {
   top: 0;
   position: sticky;
@@ -225,12 +230,14 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
 }
 
 main section {
-  height: calc(100vh - 4rem);
+  height: 100vh;
   width: 100%;
   background-color: var(--primary-tint-800);
   outline: 1px solid black;
 }
 main section .wrapper {
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -238,27 +245,31 @@ main section .wrapper {
 }
 main #home {
   width: 100%;
-  height: auto;
+  padding: clamp(0.5rem, 5vw, 5rem);
 }
 main #home .column {
   width: 50%;
   height: 100%;
 }
 main #home .column.first {
-  height: 100%;
+  margin: auto 0;
+  height: auto;
   width: 100%;
-  padding: 5rem;
   color: var(--accent-tint-300);
 }
 main #home .column.first h2 {
-  font-size: max(0.75rem, 1rem);
+  font-size: clamp(0.75rem, 1rem, 1.25rem);
   color: var(--accent);
   margin-bottom: 1rem;
 }
 main #home .column.first :nth-child(2) {
   color: var(--secondary);
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
+}
+main #home .column.first :nth-child(3) {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
 }
 main #home .column.second {
   height: 100%;
@@ -287,7 +298,7 @@ main #home .column.second .animated-svg svg {
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 

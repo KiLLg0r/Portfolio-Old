@@ -73,4 +73,6 @@ nav.find("ul li a").click(function (e) {
     pos = position.left;
     wid = width;
   }
+  var href = $(this).attr("href");
+  window.location = href;
 });
