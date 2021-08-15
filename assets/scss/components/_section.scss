@@ -1,6 +1,6 @@
 main {
   section {
-    min-height: 100vh;
+    height: auto;
     width: 100%;
     background-color: var(--primary-tint-800);
     outline: 1px solid black;
@@ -58,7 +58,7 @@ main {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
   main {
     section {
       &#home {

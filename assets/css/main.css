@@ -12,7 +12,7 @@
 }
 
 #freepik--Arrow--inject-38 {
-  animation: 10 s mouseMove infinite ease;
+  animation: 10s mouseMove infinite ease;
 }
 
 @keyframes floating {
@@ -259,7 +259,7 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
 }
 
 main section {
-  min-height: 100vh;
+  height: auto;
   width: 100%;
   background-color: var(--primary-tint-800);
   outline: 1px solid black;
@@ -315,7 +315,7 @@ main #home .column.second .animated-svg svg {
   margin-inline: 10%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
   main section#home .wrapper {
     flex-direction: column;
   }
