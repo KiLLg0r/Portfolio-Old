@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/assets/svg/Logo.svg" />
+    <link rel="alternate icon" href="/assets/svg/Logo.ico" />
+    <base href="/" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <div class="rtl">Tru</div>
+          <div class="ltr">R3alm</div>
+        </div>
+        <div class="links">
+          <ul>
+            <li class="active">
+              <a data-page="home" href="#home">
+                Home
+                <span class="Mask"><span>Home</span></span>
+                <span class="Mask"><span>Home</span></span>
+              </a>
+            </li>
+            <li class>
+              <a data-page="about" href="#about">
+                About
+                <span class="Mask"><span>About</span></span>
+                <span class="Mask"><span>About</span></span>
+              </a>
+            </li>
+            <li class>
+              <a data-page="projects" href="#projects">
+                Projects
+                <span class="Mask"><span>Projects</span></span>
+                <span class="Mask"><span>Projects</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a data-page="contact" href="#contact" class="contact"> Contact </a>
+      </nav>
+    </header>
+    <main>
+      <section data-index="0" class="home">
+        <div class="wrapper">
+          
+        </div>
+      </section>
+      <section data-index="1" class="about"></section>
+      <section data-index="2" class="projects"></section>
+      <section data-index="3" class="contact"></section>
+      <section></section>
+    </main>
+    <div id="includedContent"></div>
+    <script src="/assets/js/nav.js"></script>
+    <script>
+      $(function () {
+        $("#includedContent").load("/assets/svg/web.svg");
+      });
+    </script>
+  </body>
+</html>

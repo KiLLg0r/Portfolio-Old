@@ -1,0 +1,21 @@
+@use "abstracts/fonts";
+@use "motion/animation";
+@use "components/nav";
+@use "abstracts/colors";
+@use "components/section";
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

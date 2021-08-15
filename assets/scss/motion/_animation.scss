@@ -1,0 +1,15 @@
+#freepik--speech-bubble--inject-38,
+#freepik--World--inject-38,
+#freepik--text-box--inject-38 {
+  animation: 10s infinite ease floating;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(-1em);
+  }
+  50% {
+    transform: translateY(0em);
+  }
+}

@@ -1,0 +1,11 @@
+section {
+  height: 100vh;
+  background-color: var(--accent-tint-300);
+  border-top: 2px solid var(--primary-shade-900);
+  border-bottom: 2px solid var(--primary-shade-900);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}

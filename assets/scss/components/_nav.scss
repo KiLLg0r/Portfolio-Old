@@ -1,0 +1,270 @@
+@use '../abstracts/fonts';
+
+// === Variables =====
+$perspective: 60rem;
+$font-size: 4.25rem;
+$split-position: 49%;
+$split-thickness: 2px;
+$split-color: var(--secondary);
+
+header {
+  top: 0;
+  position: sticky;
+  background-color: var(--primary);
+  nav {
+    position: relative;
+    display: flex;
+    height: 4rem;
+    width: auto;
+    margin-inline: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-family: "Lato", sans-serif;
+      font-weight: 600;
+      position: relative;
+      cursor: pointer;
+    }
+    .logo {
+      height: 100%;
+      display: flex;
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.25rem;
+      line-height: 4rem;
+      font-weight: 700;
+      .rtl {
+        color: var(--secondary);
+        transform: rotateY(180deg);
+        pointer-events: none;
+      }
+      .ltr {
+        color: var(--accent);
+        pointer-events: none;
+      }
+    }
+    .line {
+      height: 0.188rem;
+      position: absolute;
+      bottom: 1em;
+      margin: 10px 0 0 0;
+      background: var(--accent);
+      border-radius: 0.188rem;
+    }
+    .contact {
+      outline: 2px solid var(--accent);
+      padding: 0.5rem 1rem;
+      color: var(--secondary);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      border-radius: 1rem;
+      &::before {
+        opacity: 0;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+        z-index: -1;
+      }
+      &::after {
+        opacity: 0;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, transparent 50%, var(--accent) 50%);
+        z-index: -1;
+      }
+      &:hover {
+        &::after {
+          animation: contactHoverAfter 0.5s forwards;
+        }
+        &::before {
+          animation: contactHoverBefore 0.5s forwards;
+        }
+        color: var(--primary-shade-900)
+      }
+    }
+    .links {
+      display: flex;
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        li {
+          margin: 0 40px 0 0;
+          opacity: 0.4;
+          transition: all 0.4s ease;
+          &:hover {
+            opacity: 0.7;
+          }
+          &.active {
+            opacity: 1;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            color: transparent;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: $split-position;
+              left: -10%;
+              right: -10%;
+              height: $split-thickness;
+              border-radius: $split-thickness;
+              margin-top: -($split-thickness / 2);
+              background: var(--accent);
+              transform: scale(0);
+              transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+              z-index: 1;
+            }
+            .Mask {
+              display: block;
+              position: absolute;
+              overflow: hidden;
+              color: $split-color;
+              top: 0;
+              height: $split-position;
+              transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+
+              span {
+                display: block;
+              }
+            }
+
+            // === Bottom mask specific =====
+            :nth-child(2) {
+              top: $split-position - 0.1;
+              height: 100 - $split-position + 0.1;
+              span {
+                transform: translateY(-$split-position);
+              }
+            }
+
+            &:hover,
+            &:active {
+              .Mask {
+                color: #fff;
+                transform: skewX(12deg) translateX(2px);
+              }
+              .Mask + .Mask {
+                transform: skewX(12deg) translateX(-2px);
+              }
+              &::before {
+                transform: scale(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes contactHoverBefore {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes contactHoverAfter {
+  0% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/*nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  height: 4rem;
+  background-color: var(--primary);
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    height: 100%;
+    display: flex;
+    font-family: "Orbitron", sans-serif;
+    padding: 0 2rem;
+    font-size: 1.25rem;
+    line-height: 4rem;
+    font-weight: 700;
+    .rtl {
+      color: var(--secondary);
+      transform: rotateY(180deg);
+    }
+    .ltr {
+      color: var(--accent);
+    }
+  }
+  .links {
+    height: 100%;
+    display: flex;
+    ul {
+      margin: 0 2rem;
+      display: flex;
+      li {
+        pointer-events: all;
+        position: relative;
+        margin: 0 0.25rem;
+        align-self: center;
+        padding: 0.5rem 1rem;
+        list-style: none;
+        background-image: linear-gradient(90deg, var(--accent-tint-500), var(--accent-tint-500));
+        background-size: 0% 5px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: all 200ms ease;
+        outline: 2px solid var(--accent-tint-300);
+        &:hover {
+          background-size: 100% 5px;
+        }
+      }
+    }
+    #contactBtn {
+      height: 70%;
+      width: 9rem;
+      margin: auto 0;
+      margin-right: 2rem;
+      text-align: center;
+      line-height: 2.8rem;
+      background-color: var(--accent-tint-700);
+      color: var(--secondary);
+      border-radius: 0.313rem;
+      transition: all 300ms ease;
+      &:hover {
+        background-color: var(--accent-shade-500);
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-tint-500);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+}*/
