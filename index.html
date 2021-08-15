@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="./Portfolio/assets/svg/Logo.svg" />
-    <link rel="alternate icon" href="./Portfolio/assets/svg/Logo.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/svg/Logo.svg" />
+    <link rel="alternate icon" href="./assets/svg/Logo.ico" />
     <base href="/" />
-    <link rel="stylesheet" href="./Portfolio/assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Document</title>
   </head>
@@ -47,19 +47,27 @@
       </nav>
     </header>
     <main>
-      <section data-index="0" class="home">
-        <div class="wrapper"></div>
+      <section data-index="0" id="home">
+        <div class="wrapper">
+          <div class="column first">
+            <h2>Hi, my name is</h2>
+            <h1>Robert Oblesniuc</h1>
+            <h1>I build websites & web apps!</h1>
+            <p>I'm a student specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
+          </div>
+          <div class="column second">
+            <div class="animated-svg"></div>
+          </div>
+        </div>
       </section>
-      <section data-index="1" class="about"></section>
-      <section data-index="2" class="projects"></section>
-      <section data-index="3" class="contact"></section>
-      <section></section>
+      <section data-index="1" id="about"></section>
+      <section data-index="2" id="projects"></section>
+      <section data-index="3" id="contact"></section>
     </main>
-    <div id="includedContent"></div>
     <script src="/assets/js/nav.js"></script>
     <script>
       $(function () {
-        $("#includedContent").load("/assets/svg/web.svg");
+        $(".animated-svg").load("/assets/svg/web.svg");
       });
     </script>
   </body>
