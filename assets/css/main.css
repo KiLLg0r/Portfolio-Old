@@ -259,6 +259,7 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
 }
 
 main section {
+  min-height: 100vh;
   height: auto;
   width: 100%;
   background-color: var(--primary-tint-800);
