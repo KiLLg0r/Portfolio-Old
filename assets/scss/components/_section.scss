@@ -18,6 +18,8 @@ main {
     width: 100%;
     padding-inline: clamp(1rem, 5vw, 5rem);
     padding-block: clamp(2rem, 8vh, 5rem);
+    position: relative;
+    z-index: 1;
     .column {
       width: 50%;
       height: 100%;

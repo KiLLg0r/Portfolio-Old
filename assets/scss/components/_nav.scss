@@ -11,6 +11,7 @@ header {
   top: 0;
   position: sticky;
   background-color: var(--primary);
+  z-index: 5;
   nav {
     position: relative;
     display: flex;
@@ -88,7 +89,7 @@ header {
               right: -10%;
               height: $split-thickness;
               border-radius: $split-thickness;
-              margin-top: -($split-thickness / 2);
+              margin-top: -calc($split-thickness / 2);
               background: var(--accent);
               transform: scale(0);
               transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);

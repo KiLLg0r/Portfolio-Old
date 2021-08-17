@@ -8,6 +8,42 @@
   animation: 10s mouseMove infinite ease;
 }
 
+.animated-svg {
+  animation: 1.5s easeRight ease forwards;
+}
+
+.column.first {
+  animation: 1.5s easeLeft ease forwards;
+}
+
+@keyframes easeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes easeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes floating {
   0%,
   100% {

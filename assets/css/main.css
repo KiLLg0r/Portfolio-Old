@@ -15,6 +15,40 @@
   animation: 10s mouseMove infinite ease;
 }
 
+.animated-svg {
+  animation: 1.5s easeRight ease forwards;
+}
+
+.column.first {
+  animation: 1.5s easeLeft ease forwards;
+}
+
+@keyframes easeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes easeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes floating {
   0%, 100% {
     transform: translateY(-1em);
@@ -56,6 +90,7 @@ header {
   top: 0;
   position: sticky;
   background-color: var(--primary);
+  z-index: 5;
 }
 header nav {
   position: relative;
@@ -139,7 +174,7 @@ header nav .links ul li a::before {
   right: -10%;
   height: 2px;
   border-radius: 2px;
-  margin-top: -1px;
+  margin-top: -calc(1px);
   background: var(--accent);
   transform: scale(0);
   transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
@@ -259,7 +294,6 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
 }
 
 main section {
-  min-height: 100vh;
   height: auto;
   width: 100%;
   background-color: var(--primary-tint-800);
@@ -277,6 +311,8 @@ main #home {
   width: 100%;
   padding-inline: clamp(1rem, 5vw, 5rem);
   padding-block: clamp(2rem, 8vh, 5rem);
+  position: relative;
+  z-index: 1;
 }
 main #home .column {
   width: 50%;
