@@ -178,6 +178,7 @@ header {
     inset: 0;
     background: linear-gradient(135deg, var(--accent-shade-500) 50%, transparent 50%);
     z-index: -1;
+    border-radius: 0.25rem;
   }
   &::after {
     opacity: 0;
@@ -186,14 +187,15 @@ header {
     inset: 0;
     background: linear-gradient(135deg, transparent 50%, var(--accent-shade-500) 50%);
     z-index: -1;
+    border-radius: 0.25rem;
   }
   &:hover {
     color: var(--secondary-shade-100);
     &::after {
-      animation: contactHoverAfter 0.5s forwards;
+      animation: contactHoverAfter 0.35s forwards;
     }
     &::before {
-      animation: contactHoverBefore 0.5s forwards;
+      animation: contactHoverBefore 0.35s forwards;
     }
   }
 }

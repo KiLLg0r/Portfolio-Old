@@ -249,6 +249,7 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
   inset: 0;
   background: linear-gradient(135deg, var(--accent-shade-500) 50%, transparent 50%);
   z-index: -1;
+  border-radius: 0.25rem;
 }
 .contact::after {
   opacity: 0;
@@ -257,15 +258,16 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
   inset: 0;
   background: linear-gradient(135deg, transparent 50%, var(--accent-shade-500) 50%);
   z-index: -1;
+  border-radius: 0.25rem;
 }
 .contact:hover {
   color: var(--secondary-shade-100);
 }
 .contact:hover::after {
-  animation: contactHoverAfter 0.5s forwards;
+  animation: contactHoverAfter 0.35s forwards;
 }
 .contact:hover::before {
-  animation: contactHoverBefore 0.5s forwards;
+  animation: contactHoverBefore 0.35s forwards;
 }
 
 :root {
@@ -340,14 +342,23 @@ section .wrapper {
   margin-bottom: 1rem;
 }
 #home .column.first :nth-child(3) {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   margin-bottom: 0.5rem;
 }
 #home .column.second {
+  position: relative;
   height: 100%;
   width: 100%;
 }
+#home .column.second #blob {
+  position: absolute;
+  z-index: 0;
+  transform: scale(1.5) rotateY(180deg);
+  fill: var(--accent-shade-500);
+  opacity: 0.5;
+}
 #home .column.second .animated-svg {
+  position: relative;
   height: 100%;
   width: 100%;
 }
