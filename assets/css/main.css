@@ -91,11 +91,13 @@ header {
   position: sticky;
   background-color: var(--primary);
   z-index: 5;
+  height: 100%;
+  width: 100%;
 }
 header nav {
   position: relative;
   display: flex;
-  height: 4rem;
+  height: 5rem;
   width: auto;
   margin-inline: 2rem;
   justify-content: space-between;
@@ -117,7 +119,7 @@ header nav .logo {
   display: flex;
   font-family: "Orbitron", sans-serif;
   font-size: 1.25rem;
-  line-height: 4rem;
+  line-height: 5rem;
   font-weight: 700;
 }
 header nav .logo .rtl {
@@ -132,7 +134,7 @@ header nav .logo .ltr {
 header nav .line {
   height: 0.188rem;
   position: absolute;
-  bottom: 1em;
+  bottom: 1.25em;
   margin: 10px 0 0 0;
   background: var(--accent);
   border-radius: 0.188rem;
@@ -231,20 +233,21 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
   }
 }
 .contact {
-  outline: 2px solid var(--accent);
-  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  padding: 1rem 2rem;
   color: var(--secondary);
+  background-color: var(--accent);
   overflow: hidden;
   position: relative;
   z-index: 1;
-  box-shadow: 0px 0px 0.25rem 0.125rem var(--accent);
+  border-radius: 0.25rem;
 }
 .contact::before {
   opacity: 0;
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background: linear-gradient(135deg, var(--accent-shade-500) 50%, transparent 50%);
   z-index: -1;
 }
 .contact::after {
@@ -252,11 +255,11 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 50%, var(--accent) 50%);
+  background: linear-gradient(135deg, transparent 50%, var(--accent-shade-500) 50%);
   z-index: -1;
 }
 .contact:hover {
-  color: var(--primary-shade-900);
+  color: var(--secondary-shade-100);
 }
 .contact:hover::after {
   animation: contactHoverAfter 0.5s forwards;
@@ -291,15 +294,16 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
   --primary-shade-800: #0c0c0c;
   --primary-shade-900: #060606;
   --secondary: #ececec;
+  --secondary-shade-100: #c0c0c0;
 }
 
-main section {
+section {
   height: auto;
   width: 100%;
   background-color: var(--primary-tint-800);
   outline: 1px solid black;
 }
-main section .wrapper {
+section .wrapper {
   height: 100%;
   width: 100%;
   display: flex;
@@ -307,49 +311,54 @@ main section .wrapper {
   justify-content: space-around;
   flex-direction: row;
 }
-main #home {
+
+#home {
   width: 100%;
   padding-inline: clamp(1rem, 5vw, 5rem);
   padding-block: clamp(2rem, 8vh, 5rem);
   position: relative;
   z-index: 1;
 }
-main #home .column {
+#home .column {
   width: 50%;
   height: 100%;
 }
-main #home .column.first {
+#home .column.first {
   margin: auto 0;
   height: auto;
   width: 100%;
   color: var(--accent-tint-300);
 }
-main #home .column.first h2 {
+#home .column.first h2 {
   font-size: clamp(0.75rem, 1rem, 1.25rem);
   color: var(--accent);
   margin-bottom: 1rem;
 }
-main #home .column.first :nth-child(2) {
+#home .column.first :nth-child(2) {
   color: var(--secondary);
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
 }
-main #home .column.first :nth-child(3) {
+#home .column.first :nth-child(3) {
   font-size: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 0.5rem;
 }
-main #home .column.second {
+#home .column.second {
   height: 100%;
   width: 100%;
 }
-main #home .column.second .animated-svg {
+#home .column.second .animated-svg {
   height: 100%;
   width: 100%;
 }
-main #home .column.second .animated-svg svg {
+#home .column.second .animated-svg svg {
   width: 80%;
   height: 100%;
   margin-inline: 10%;
+}
+
+#about {
+  height: 100vh;
 }
 
 @media screen and (max-width: 950px) {

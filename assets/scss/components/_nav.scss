@@ -12,10 +12,12 @@ header {
   position: sticky;
   background-color: var(--primary);
   z-index: 5;
+  height: 100%;
+  width: 100%;
   nav {
     position: relative;
     display: flex;
-    height: 4rem;
+    height: 5rem;
     width: auto;
     margin-inline: 2rem;
     justify-content: space-between;
@@ -36,7 +38,7 @@ header {
       display: flex;
       font-family: "Orbitron", sans-serif;
       font-size: 1.25rem;
-      line-height: 4rem;
+      line-height: 5rem;
       font-weight: 700;
       .rtl {
         color: var(--secondary);
@@ -51,7 +53,7 @@ header {
     .line {
       height: 0.188rem;
       position: absolute;
-      bottom: 1em;
+      bottom: 1.25em;
       margin: 10px 0 0 0;
       background: var(--accent);
       border-radius: 0.188rem;
@@ -161,19 +163,20 @@ header {
 }
 
 .contact {
-  outline: 2px solid var(--accent);
-  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  padding: 1rem 2rem;
   color: var(--secondary);
+  background-color: var(--accent);
   overflow: hidden;
   position: relative;
   z-index: 1;
-  box-shadow: 0px 0px 0.25rem 0.125rem var(--accent);
+  border-radius: 0.25rem;
   &::before {
     opacity: 0;
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+    background: linear-gradient(135deg, var(--accent-shade-500) 50%, transparent 50%);
     z-index: -1;
   }
   &::after {
@@ -181,16 +184,16 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent 50%, var(--accent) 50%);
+    background: linear-gradient(135deg, transparent 50%, var(--accent-shade-500) 50%);
     z-index: -1;
   }
   &:hover {
+    color: var(--secondary-shade-100);
     &::after {
       animation: contactHoverAfter 0.5s forwards;
     }
     &::before {
       animation: contactHoverBefore 0.5s forwards;
     }
-    color: var(--primary-shade-900);
   }
 }
