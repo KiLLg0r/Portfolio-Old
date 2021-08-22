@@ -10,9 +10,9 @@ $split-color: var(--secondary);
 header {
   top: 0;
   position: sticky;
-  background-color: var(--primary);
+  background-color: transparent;
   z-index: 5;
-  height: 100%;
+  height: 5rem;
   width: 100%;
   nav {
     position: relative;

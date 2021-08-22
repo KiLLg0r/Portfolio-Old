@@ -19,6 +19,10 @@
   animation: 1.5s easeRight ease forwards;
 }
 
+.animated-svg {
+  animation-delay: 500ms;
+}
+
 .column.first {
   animation: 1.5s easeLeft ease forwards;
 }
@@ -89,9 +93,9 @@
 header {
   top: 0;
   position: sticky;
-  background-color: var(--primary);
+  background-color: transparent;
   z-index: 5;
-  height: 100%;
+  height: 5rem;
   width: 100%;
 }
 header nav {
@@ -278,7 +282,7 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
   --accent-tint-800: #47b3c6;
   --accent-tint-900: #30aabf;
   --accent: #19a0b8;
-  --accent-shade-300: #127081;
+  --accent-shade-300: #127182;
   --accent-shade-500: #0d505c;
   --accent-shade-700: #073037;
   --accent-shade-800: #052025;
@@ -300,10 +304,9 @@ header nav .links ul li a:hover::before, header nav .links ul li a:active::befor
 }
 
 section {
-  height: auto;
+  height: 100%;
   width: 100%;
-  background-color: var(--primary-tint-800);
-  outline: 1px solid black;
+  outline: 1px solid var(--accent);
 }
 section .wrapper {
   height: 100%;
@@ -333,12 +336,19 @@ section .wrapper {
 }
 #home .column.first h2 {
   font-size: clamp(0.75rem, 1rem, 1.25rem);
-  color: var(--accent);
+  color: var(--accent-tint-300);
   margin-bottom: 1rem;
 }
-#home .column.first :nth-child(2) {
+#home .column.first h1 {
+  background: url("/assets/img/h1_background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: var(--secondary);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   margin-bottom: 1rem;
 }
 #home .column.first :nth-child(3) {
@@ -368,12 +378,15 @@ section .wrapper {
   margin-inline: 10%;
 }
 
-#about {
+#about, #projects, #contact {
   height: 100vh;
 }
 
 @media screen and (max-width: 950px) {
-  main section#home .wrapper {
+  #home .column.second #blob {
+    transform: scale(1.25) translateX(10%) rotateY(-180deg);
+  }
+  #home .wrapper {
     flex-direction: column;
   }
 }
@@ -394,6 +407,14 @@ html {
   font-family: "Orbitron", sans-serif;
   font-size: 1rem;
   font-weight: normal;
+}
+
+.background {
+  position: absolute;
+  display: block;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--primary);
 }
 
 /*# sourceMappingURL=main.css.map */

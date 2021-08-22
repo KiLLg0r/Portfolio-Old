@@ -7,8 +7,12 @@
     <link rel="icon" type="image/svg+xml" href="./assets/svg/Logo.svg" />
     <link rel="alternate icon" href="./assets/svg/Logo.ico" />
     <base href="/" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- JQuery CDNJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Particle.js CDNJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js" integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Document</title>
   </head>
   <body>
@@ -51,25 +55,55 @@
         <div class="column first">
           <h2>Hi, my name is</h2>
           <h1>Robert Oblesniuc</h1>
-          <h1>I build websites & web apps!</h1>
-          <p>I'm a student specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
+          <p>What I do ? Let's find out!</p>
         </div>
         <div class="column second">
-          <svg id="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path d="M40.5,-35.8C50.1,-20.3,53.7,-3.6,50.5,12C47.3,27.6,37.2,42,24.7,46C12.2,49.9,-2.8,43.4,-20.3,37C-37.9,30.5,-58,24.2,-66.7,8.8C-75.3,-6.6,-72.4,-31,-59.4,-47.3C-46.4,-63.5,-23.2,-71.6,-3.8,-68.6C15.5,-65.5,31,-51.3,40.5,-35.8Z" transform="translate(100 100)" />
-          </svg>
-          <div class="animated-svg">
-          </div>
+          <div class="animated-svg"></div>
         </div>
       </div>
     </section>
     <section data-index="1" id="about"></section>
     <section data-index="2" id="projects"></section>
     <section data-index="3" id="contact"></section>
+    <canvas class="background"></canvas>
 
     <script src="/assets/js/nav.js"></script>
-    <script src="/assets/js/anim.js"></script>
+    <!-- <script src="/assets/js/anim.js"></script> -->
     <script>
+      window.onload = function () {
+        var canvas = document.querySelector(".background");
+        var homeSection = document.querySelector("#home");
+
+        // let homeSectionWidth = homeSection.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        // let homeSectionHeight = homeSection.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        let homeSectionHeight = homeSection.offsetHeight;
+        let homeSectionWidth = homeSection.offsetWidth;
+
+        console.log(homeSection);
+        console.log(homeSectionHeight);
+        console.log(homeSectionWidth);
+
+        canvas.style.height = homeSectionHeight;
+        canvas.style.width = homeSectionWidth;
+
+        Particles.init({
+          selector: ".background",
+          color: "#30aabf",
+          maxParticles: 100,
+          sizeVariations: 5,
+          connectParticles: true,
+
+          responsive: [
+            {
+              breakpoint: 950,
+              options: {
+                maxParticles: 50,
+              },
+            },
+          ],
+        });
+      };
       $(function () {
         $(".animated-svg").load("./assets/svg/web.svg");
       });

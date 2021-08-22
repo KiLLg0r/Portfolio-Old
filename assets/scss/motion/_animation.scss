@@ -12,6 +12,11 @@
   animation: 1.5s easeRight ease forwards;
 }
 
+
+.animated-svg {
+  animation-delay: 500ms;
+}
+
 .column.first {
   animation: 1.5s easeLeft ease forwards;
 }
