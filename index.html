@@ -7,13 +7,20 @@
     <link rel="icon" type="image/svg+xml" href="./assets/svg/Logo.svg" />
     <link rel="alternate icon" href="./assets/svg/Logo.ico" />
     <base href="/" />
+
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+
     <!-- JQuery CDNJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Particle.js CDNJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js" integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+
+    <title>TR Portfolio</title>
   </head>
   <body>
     <header>
@@ -56,40 +63,52 @@
           <h2>Hi, my name is</h2>
           <h1>Robert Oblesniuc</h1>
           <p>What I do ? Let's find out!</p>
+          <p>Scroll down or click icon to find out!</p>
+          <i class="bx bxs-hand-down" title="Scroll down to find out!"></i>
         </div>
         <div class="column second">
           <div class="animated-svg"></div>
         </div>
       </div>
+      <canvas class="background"></canvas>
     </section>
-    <section data-index="1" id="about"></section>
+    <section data-index="1" id="about">
+      <div class="wrapper 1">
+        <div class="illustration 1"></div>
+        <div class="text 1">
+          <h1>Who I am ?</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ab voluptas voluptatem quos aut! Veniam illum odio voluptas fugiat excepturi.</p>
+        </div>
+      </div>
+      <div class="wrapper 2">
+        <div class="text 2">
+          <h1>What I do ?</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eius tenetur rerum, error quisquam placeat magni, blanditiis nulla nihil similique facilis ut nemo exercitationem repellat. Odio fugiat facilis ullam doloremque.</p>
+        </div>
+        <div class="illustration 2"></div>
+      </div>
+      <div class="wrapper 3">
+        <div class="illustration 3"></div>
+        <div class="text 3">
+          <h1>How the procces works ?</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, consequatur! Nisi suscipit iure earum eius a quos, rerum, dolorum magni nihil, explicabo repellendus cupiditate vero molestiae veritatis vel culpa quis nulla ducimus. Dolorem assumenda deleniti totam quod asperiores reiciendis reprehenderit. Voluptate vero itaque vitae voluptatum veritatis. Maiores at rerum nobis.</p>
+        </div>
+      </div>
+    </section>
     <section data-index="2" id="projects"></section>
     <section data-index="3" id="contact"></section>
-    <canvas class="background"></canvas>
+
+    <footer>
+      <a href="https://storyset.com/">Work illustrations by Storyset</a>
+    </footer>
 
     <script src="/assets/js/nav.js"></script>
     <!-- <script src="/assets/js/anim.js"></script> -->
     <script>
       window.onload = function () {
-        var canvas = document.querySelector(".background");
-        var homeSection = document.querySelector("#home");
-
-        // let homeSectionWidth = homeSection.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        // let homeSectionHeight = homeSection.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-        let homeSectionHeight = homeSection.offsetHeight;
-        let homeSectionWidth = homeSection.offsetWidth;
-
-        console.log(homeSection);
-        console.log(homeSectionHeight);
-        console.log(homeSectionWidth);
-
-        canvas.style.height = homeSectionHeight;
-        canvas.style.width = homeSectionWidth;
-
         Particles.init({
           selector: ".background",
-          color: "#30aabf",
+          color: "#47b3c6",
           maxParticles: 100,
           sizeVariations: 5,
           connectParticles: true,
@@ -103,10 +122,21 @@
             },
           ],
         });
-      };
-      $(function () {
+
+        var checkDown = document.querySelector(".bx.bxs-hand-down");
+        checkDown.addEventListener("click", function () {
+          $("html, body").animate(
+            {
+              scrollTop: $("#about").offset().top,
+            },
+            "slow",
+          );
+        });
+
         $(".animated-svg").load("./assets/svg/web.svg");
-      });
+        $(".illustration.1").load("./assets/svg/me.svg");
+        $(".illustration.2").load("./assets/svg/work.svg");
+      };
     </script>
   </body>
 </html>

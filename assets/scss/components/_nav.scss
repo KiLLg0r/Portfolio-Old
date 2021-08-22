@@ -10,7 +10,7 @@ $split-color: var(--secondary);
 header {
   top: 0;
   position: sticky;
-  background-color: transparent;
+  background-color: var(--primary);
   z-index: 5;
   height: 5rem;
   width: 100%;

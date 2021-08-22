@@ -43,10 +43,10 @@ nav.find("ul li a").click(function (e) {
             150,
             function () {
               nav.removeClass("animate");
-            }
+            },
           );
           _this.parent().addClass("active");
-        }
+        },
       );
     } else {
       line.animate(
@@ -63,16 +63,24 @@ nav.find("ul li a").click(function (e) {
             150,
             function () {
               nav.removeClass("animate");
-            }
+            },
           );
           _this.parent().addClass("active");
-        }
+        },
       );
     }
 
     pos = position.left;
     wid = width;
   }
+
   var href = $(this).attr("href");
-  window.location = href;
+  console.log(href);
+  console.log($(href).offset().top);
+  $("html, body").animate(
+    {
+      scrollTop: $(href).offset().top - 80,
+    },
+    "slow",
+  );
 });

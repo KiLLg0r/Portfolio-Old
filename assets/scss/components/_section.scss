@@ -1,10 +1,14 @@
 section {
-  height: 100%;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
-  outline: 1px solid var(--accent);
+  position: relative;
+  z-index: 4;
 
   .wrapper {
-    height: 100%;
+    position: relative;
+    z-index: 4;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
@@ -23,9 +27,8 @@ section {
     height: 100%;
     &.first {
       margin: auto 0;
-      height: auto;
+      height: 100%;
       width: 100%;
-      color: var(--accent-tint-300);
       h2 {
         font-size: clamp(0.75rem, 1rem, 1.25rem);
         color: var(--accent-tint-300);
@@ -43,9 +46,22 @@ section {
         font-size: clamp(2rem, 5vw, 4rem);
         margin-bottom: 1rem;
       }
-      :nth-child(3) {
+      p {
         font-size: clamp(1rem, 2vw, 1.5rem);
         margin-bottom: 0.5rem;
+        color: var(--secondary-shade-100);
+      }
+      :nth-child(4) {
+        font-size: clamp(0.5rem, 1.5vw, 1rem);
+      }
+      .bx.bxs-hand-down {
+        background: linear-gradient(135deg, var(--accent-shade-700), var(--accent), var(--accent-shade-700));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 7rem;
+        cursor: pointer;
+        animation: 2s fadeDown infinite;
       }
     }
     &.second {
@@ -72,8 +88,9 @@ section {
     }
   }
 }
-#about, #projects, #contact {
+#about {
   height: 100vh;
+  background-color: var(--primary);
 }
 
 @media screen and (max-width: 950px) {
@@ -88,5 +105,15 @@ section {
     .wrapper {
       flex-direction: column;
     }
+  }
+}
+
+@keyframes fadeDown {
+  0%,
+  100% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(25%);
   }
 }
